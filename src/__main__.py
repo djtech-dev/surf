@@ -7,29 +7,6 @@ import os
 import click
 import httplib2
 
-COMPILERS = {
-    ".c": "{file_path}"
-    ".cpp"
-    ".rs"
-    ".go"
-    ".zig"
-    ".cbl"
-    ".cob"
-    ".f"
-    ".for"
-    ".f90"
-    ".f95"
-    ".jakt"
-    ".adb"
-    ".ads"
-    ".d"
-    ".m"
-    ".mm"
-    ".swift"
-}
-GCC = {}
-LLVM = {}
-
 def project_ccommand(command):
     pass #TODO
 
