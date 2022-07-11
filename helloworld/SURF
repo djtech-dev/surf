@@ -1,0 +1,37 @@
+project:
+  name: helloworld
+  version: 1.0.0
+  author: dj_tech
+  license: MIT
+
+  toolchain: gcc
+  staticbuild: off
+source:
+  - file:main.c:
+    - dependencies:
+      - file:text.c 
+  - file:text.c:
+    - headers: file:text.h
+    - data:
+      - HELLO_WORLD
+  - gh:tidwall/hashmap.c:
+    - hashmap.c
+data:
+  - HELLO_WORLD: file:helloworld.txt 
+scripts:
+  clean: default
+  build_exec: default
+  build_lib: default
+  build_ape: default
+  install: default
+  uninstall: default
+  check: default
+tests:
+  settings:
+    rust_tests: on
+    zig_tests: on
+    go_tests: on
+  tests:
+    - get_hello_world:
+      function: get_hello_world
+      from: file:text.c
